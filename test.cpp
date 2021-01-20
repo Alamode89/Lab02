@@ -1,4 +1,5 @@
 #include "c-echo.h"
+#include "c-count.h"
 
 #include "gtest/gtest.h"
 
@@ -12,19 +13,20 @@ TEST(EchoTest, EmptyString) {
     EXPECT_EQ("", echo(1,test_val));
 }
 
-TEST(EchoTest, LongString) {
-    char* test_val[6]; test_val[0] = "./c-echo"; test_val[1] = "hello"; test_val[2] = "world"; test_val[3] = "I"; test_val[4] = "am"; test_val[5] = "Ashley";
-    EXPECT_EQ("hello world I am Ashley", echo(6,test_val));
+TEST(CountTest, HelloWorld) {
+    std::string test_str = "hello world";
+    EXPECT_EQ(2, count(test_str));
 }
 
-TEST(EchoTest, PunctuationString) {
-    char* test_val[8]; test_val[0] = "./c-echo"; test_val[1] = "hello"; test_val[2] = "world"; test_val[3] = ","; test_val[4] = "I"; test_val[5] = "love"; test_val[6] = "you"; test_val[7] = "!";       
-    EXPECT_EQ("hello world , I love you !", echo(8,test_val));
+TEST(CountTest, EmptyString) {
+    std::string test_str = "";
+    EXPECT_EQ(0, count(test_str));
 }
 
-TEST(EchoTest, NumString) {
-    char* test_val[4]; test_val[0] = "./c-echo"; test_val[1] = "1"; test_val[2] = "2"; test_val[3] = "3";
-    EXPECT_EQ("1 2 3", echo(4,test_val));
+TEST(CountTest, ManySpaces) {
+    std::string test_str = "   this   string has     weird   spacing";
+    EXPECT_EQ(5, count(test_str));
+>>>>>>> 6333b5987b2de6262a1c00fd19736361bee6324b
 }  
 
 
