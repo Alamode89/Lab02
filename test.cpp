@@ -26,7 +26,6 @@ TEST(CountTest, EmptyString) {
 TEST(CountTest, ManySpaces) {
     std::string test_str = "   this   string has     weird   spacing";
     EXPECT_EQ(5, count(test_str));
->>>>>>> 6333b5987b2de6262a1c00fd19736361bee6324b
 }  
 
 
